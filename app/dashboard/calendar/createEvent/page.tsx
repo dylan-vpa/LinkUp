@@ -27,10 +27,6 @@ export default function CreateEventView() {
     <Layout>
       <div className="container max-w-2xl mx-auto py-6">
         <div className="flex items-center mb-6">
-          <Button variant="ghost" onClick={() => router.back()}>
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Volver
-          </Button>
           <h1 className="text-2xl font-bold ml-4">Nuevo Evento</h1>
         </div>
 
