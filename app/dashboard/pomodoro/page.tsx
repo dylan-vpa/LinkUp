@@ -13,7 +13,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Play, Pause, RotateCcw, Settings, ArrowLeft } from 'lucide-react'
 import { PomodoroTimerProps } from '@/lib/utils/interfaces'
 
-export default function PomodoroTimer({ onComplete, coins }: PomodoroTimerProps) {
+export default function PomodoroTimer() {
   //States
   const [time, setTime] = useState(25 * 60)
   const [isActive, setIsActive] = useState(false)
@@ -42,13 +42,12 @@ export default function PomodoroTimer({ onComplete, coins }: PomodoroTimerProps)
       }, 1000)
     } else if (time === 0) {
       setIsActive(false)
-      onComplete()
     }
 
     return () => {
       if (interval) clearInterval(interval)
     }
-  }, [isActive, time, onComplete])
+  }, [isActive, time])
 
   const toggleTimer = () => {
     setIsActive(!isActive)
@@ -108,7 +107,6 @@ export default function PomodoroTimer({ onComplete, coins }: PomodoroTimerProps)
                     setSelectedBackground(bg.url)
                     setShowBackgroundModal(false)
                   }}
-                  disabled={coins < bg.price || selectedBackground === bg.url}
                   className="w-full"
                 
                 >

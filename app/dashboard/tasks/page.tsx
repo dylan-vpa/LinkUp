@@ -109,11 +109,9 @@ export default function TasksView() {
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2">
-                    {statusIcons[task.status]}
                     <span className="text-sm">{task.status}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    {priorities[task.priority]}
                     <span className="text-sm">{task.priority}</span>
                   </div>
                   <DropdownMenu>
